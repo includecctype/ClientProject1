@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Sketch&display=swap');
 
 * {
     margin: 0%;
@@ -115,11 +115,10 @@ body{
     position: sticky;
     top: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, rgba(255, 68, 0, 1) 10%, rgba(255,0,0,1));
     z-index: 10;
-    border-radius: 0 0 1rem 1rem;
 }
 
 .mobilenavbar p{
@@ -143,6 +142,10 @@ body{
     animation: navbarend 0.5s ease-out forwards;
 }
 
+.openmenu{
+    margin:0 0 0 auto;
+}
+
 .dropdownnavbar{
     position:fixed;
     top: 0;
@@ -151,18 +154,18 @@ body{
     width: 100vw;
     display: none;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     font-weight: bold;
     z-index: 10;
 }
 
 .dropdownnavbar p{
-    padding: 2rem 3rem 2rem 0;
+    padding: 2rem 0 2rem 0;
 }
 
 .dropdownnavbar p:first-child{
-    margin: -4rem 3rem 3rem 0;
+    margin: -4rem 0 3rem 0;
     padding: 0;
     display: flex;
     align-items: center;
@@ -493,6 +496,9 @@ body{
 @media (max-width: 550px){
     .selfexplain p:nth-child(1){
         font-size: 1.2rem;
+        text-decoration-line: underline;
+        text-decoration-style: dashed;
+        text-decoration-color: black;
     }
     .principle{
         font-size: 1rem;
@@ -693,10 +699,12 @@ body{
     }
 }
 
+/*Top Pick*/
+
 .toppicktitle{
     font-size: 2rem;
     font-weight: bold;
-    font-family: "Londrina Sketch", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -741,9 +749,6 @@ body{
         width: 100%;
         align-items: none;
         justify-content: none;
-    }
-    .toppickimgdiv img{
-        left: 0;
     }
     .toppickdiv{
         width: 70%;
@@ -855,7 +860,7 @@ body{
 }
 
 .achievement p{
-    font-family: "Londrina Sketch", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -897,7 +902,7 @@ body{
         margin: 0.6rem;
     }
     .achievement p{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .achievement{
         margin: 3.5rem 0 0 0;
@@ -938,6 +943,12 @@ body{
     background-color: red;
     margin: 0 0 2rem 0;
     color: white;
+}
+
+@media (max-width: 550px){
+    .membershipword{
+        font-size: 1.5rem;
+    }
 }
 
 /*Exclusive*/
@@ -1006,8 +1017,20 @@ body{
     transform: scale(3);
 }
 
-.exclusive > div > p:nth-child(1){
+.exclusivetitlelaptop{
     font-size: 2rem;
+}
+
+.exclusive > div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.exclusivetitlephone{
+    display: none;
+    width: max-content;
 }
 
 @media (max-width: 550px){
@@ -1023,8 +1046,12 @@ body{
     .exclusive3 p{
         font-size: 1rem;
     }
-    .exclusive > div > p:nth-child(1){
+    .exclusivetitlelaptop{
+        display: none;
+    }
+    .exclusivetitlephone{
         font-size: 1.5rem;
+        display: flex;
     }
 }
 

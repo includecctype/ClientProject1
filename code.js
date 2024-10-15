@@ -1,8 +1,10 @@
-//Reload on resize
+// No rotate
 
-window.addEventListener('resize', function() {
-    location.reload();
-});
+if (screen.orientation) {
+    screen.orientation.lock('portrait').catch(function(error) {
+        console.log('Orientation lock failed: ', error);
+    });
+}
 
 // Navigation Bars
 
