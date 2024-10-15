@@ -741,6 +741,7 @@ body{
     border-radius: 50%;
     padding: 1.5rem;
     object-fit: cover;
+    left:0;
 }
 
 @media (max-width: 550px){

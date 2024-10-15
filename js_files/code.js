@@ -6,6 +6,14 @@ if (screen.orientation) {
     });
 }
 
+// Top Bar
+
+const guest = document.querySelector(".TopBar p:nth-child(3)")
+
+guest.addEventListener("click", function(){
+    window.location.href = "https://system.trendyqmarketing.com/"
+})
+
 // Navigation Bars
 
 const openmenu = document.querySelector(".openmenu")
