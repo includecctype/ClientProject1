@@ -1,0 +1,1061 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    user-select: none;
+}
+
+/* Top Bar */
+
+.TopBar{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    z-index: 9;
+    font-size:0.8rem;
+    font-weight: bold;
+}
+
+.TopBar p:first-child{
+    margin-right:auto;
+}
+
+.TopBar p:nth-child(3){
+    margin-left: auto;
+}
+
+.TopBar p{
+    margin: 0.5rem;
+}
+
+.TopBar p:hover{
+    animation: topbar 0.5s ease-out forwards;
+}
+
+.TopBar p:not(:hover){
+    animation: topbarend 0.5s ease-out forwards;
+}
+
+@keyframes topbar{
+    0%{
+        color: black;
+    }
+    100%{
+        color: rgb(255, 50, 50);
+    }
+}
+
+@keyframes topbarend{
+    0%{
+        color: rgb(255, 50, 50);
+    }
+    100%{
+        color: black;
+    }
+}
+
+/*NavBar*/
+
+.laptopnavbar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: linear-gradient(90deg, rgba(255, 68, 0, 1) 10%, rgba(255,0,0,1));
+    z-index: 10;
+    border-radius: 0 0 1rem 1rem;
+
+}
+
+.laptopnavbar p{
+    padding: 2rem 2rem 2rem 2rem;
+    font-weight: bold;
+}
+
+.laptopnavbar p:first-child{
+    margin:0 auto 0 0;
+    padding: 0.5rem 0 0.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.laptopnavbar p:hover{
+    animation: navbarstart 0.5s ease-out forwards;
+}
+
+.laptopnavbar p:not(:hover){
+    animation: navbarend 0.5s ease-out forwards;
+}
+
+.wordlogodiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.mobilenavbar{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 68, 0, 1) 10%, rgba(255,0,0,1));
+    z-index: 10;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.mobilenavbar p{
+    padding: 2rem 2rem 2rem 2rem;
+    font-weight: bold;
+}
+
+.mobilenavbar p:first-child{
+    margin:0 auto 0 0;
+    padding: 0 0 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobilenavbar p:hover{
+    animation: navbarstart 0.5s ease-out forwards;
+}
+
+.mobilenavbar p:not(:hover){
+    animation: navbarend 0.5s ease-out forwards;
+}
+
+.dropdownnavbar{
+    position:fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.dropdownnavbar p{
+    padding: 2rem 3rem 2rem 0;
+}
+
+.dropdownnavbar p:first-child{
+    margin: -4rem 3rem 3rem 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownnavbar p:hover{
+    animation: navbarstart 0.5s ease-out forwards;
+}
+
+.dropdownnavbar p:not(:hover){
+    animation: navbarend 0.5s ease-out forwards;
+}
+
+.openmenu:hover{
+    animation: navbarstart 0.5s ease-out forwards;
+}
+
+.openmenu:not(:hover){
+    animation: navbarend 0.5s ease-out forwards;
+}
+
+.closemenu:hover{
+    animation: navbarstart 0.5s ease-out forwards;
+}
+
+.closemenu:not(:hover){
+    animation: navbarend 0.5s ease-out forwards;
+}
+
+@keyframes navbarstart{
+    0%{
+        color: white;
+        fill: white;
+    }
+    100%{
+        color: black;
+        fill: black;
+    }
+}
+
+@keyframes navbarend{
+    0%{
+        color: black;
+        fill: black;
+    }
+    100%{
+        color: white;
+        fill: white;
+    }
+}
+
+@media (min-width: 1000px){
+    .laptopnavbar{
+        display:flex;
+    }
+    .mobilenavbar{
+        display: none;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 1000px){
+    .laptopnavbar{
+        display:none;
+    }
+    .mobilenavbar{
+        display: flex;
+    }
+    .dropdownnavbar{
+        background: linear-gradient(90deg, rgba(255, 68, 0, 0.3), rgba(255,0,0,0.8))
+    }
+}
+
+@media (max-width: 550px){
+    .laptopnavbar{
+        display:none;
+    }
+    .mobilenavbar{
+        display: flex;
+    }
+    .dropdownnavbar{
+        align-items: center;
+        background: linear-gradient(90deg, rgba(255, 68, 0, 1) 10%, rgba(255,0,0,1))
+    }
+}
+
+/*Mission Post*/
+
+.mission{
+    width: 100%;
+    height: 90vh;
+    background-image: url('Test\ Images/stockimageperson.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mission p{
+    font-family: "Satisfy", cursive;
+}
+
+.mission p:nth-child(1){
+    font-size: 3rem;
+    background: linear-gradient(90deg, black, rgb(255, 68, 0), black);
+    background-clip: text;
+    color: transparent;
+}
+
+.mission p:nth-child(2){
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.mission div{
+    position:absolute;
+    left: 15%;
+    top: 50%;
+    height:min-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+@media (max-width: 1000px){
+    .mission{
+        background-position:right ;
+    }
+    .mission div{
+        left:5%;
+    }
+    .mission p:nth-child(1){
+        width: 60%;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 1000px){
+    .mission{
+        height: 50vh;
+    }
+    .mission div{
+        top: 35%;
+        left: 15%;
+    }
+}
+
+@media (max-width: 550px){
+    .mission{
+        height: 40vh;
+    }
+    .mission p:nth-child(1){
+        width: 50%;
+        transform: scale(0.8);
+    }
+    .mission div{
+        top: 25%;
+    }
+    .mission p:nth-child(2){
+        position: absolute;
+        top: 90%;
+        left: 5%;
+    }
+}
+
+/*Slide Show*/
+
+.slidesection{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slideframe{
+    position: relative;
+    height: 85%;
+    width: 70%;
+    border-radius: 1.5rem;
+    border: solid 0.3rem;
+    overflow: hidden;
+    border-color: transparent;
+    background: linear-gradient(90deg, black, rgb(255, 68, 0), black);
+    animation: bordergradient 3s linear forwards;
+}
+
+.togglearrow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.slideshow{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 500%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slideshow div{
+    width: 20%;
+    height: 100%;
+}
+
+.slideshow img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arrows{
+    position: absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    opacity: 0;
+}
+
+.numbering{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(180deg, rgb(255, 68, 0), black);
+    background-clip: text;
+    margin: 2rem 50% 2rem 50%;
+}
+
+.leftarrowsvgdisguise , .rightarrowsvgdisguise
+{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftarrowsvg , .rightarrowsvg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes arrowanimate{
+    0%{
+        fill: red;
+    }
+    50%{
+        fill: black;
+    }
+    100%{
+        fill: red;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 1000px){
+    .slidesection{
+        height: 60vh;
+    }
+    .slideframe{
+        height: 75%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 550px){
+    .slidesection{
+        height: 45vh;
+    }
+    .slideframe{
+        height: 80%;
+        width: 90%;
+    }
+    .numbering{
+        font-size: 1.5rem;
+    }
+    .arrows svg{
+        width: 60px;
+        height: 30px;
+    }
+}
+
+/*Self-Explain*/
+
+.selfexplain{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    flex-direction: column;
+    margin: 0 0 2.5rem 0;
+}
+
+.selfexplain p{
+    font-weight: bold;
+}
+
+.selfexplain p:nth-child(1){
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.highlight{
+    background: linear-gradient(180deg, rgb(255, 68, 0) 20%, black);
+    background-clip: text;
+    color: transparent;
+}
+
+.principle{
+    color: red;
+    text-shadow: 0 0 1rem red;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 550px) and (max-width: 1000px){
+    .selfexplain p:nth-child(1){
+        font-size: 1.6rem;
+    }
+    .principle{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 550px){
+    .selfexplain p:nth-child(1){
+        font-size: 1.2rem;
+    }
+    .principle{
+        font-size: 1rem;
+    }
+}
+
+/*Discover More*/
+
+.discovercenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+}
+
+.discovermore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+}
+
+.discovercard{
+    margin: 1rem;
+    border: 1rem black;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 220px;
+    height: 100%;
+}
+
+.discovercard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.discoverbtn{
+    position: relative;
+    font-size: 1rem;
+    font-weight: bold;
+    color:transparent;
+    background-color: black;
+    width:max-content;
+    height: max-content;
+    padding: 1rem 2rem 1rem 2rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.discoverbtn::before{
+    position: absolute;
+    content: "Discover More";
+    color: white;
+    z-index: 2;
+}
+
+.discoverbtn1:hover::before{
+    animation: startdiscovertext 1s ease-out forwards;
+}
+.discoverbtn1:not(:hover)::before{
+    animation: enddiscovertext 1s ease-in forwards;
+}
+
+.discoverbtn2:hover::before{
+    animation: startdiscovertext 1s ease-out forwards;
+}
+.discoverbtn2:not(:hover)::before{
+    animation: enddiscovertext 1s ease-in forwards;
+}
+
+.discoverbtn3:hover::before{
+    animation: startdiscovertext 1s ease-out forwards;
+}
+.discoverbtn3:not(:hover)::before{
+    animation: enddiscovertext 1s ease-in forwards;
+}
+
+.discoverbtn4:hover::before{
+    animation: startdiscovertext 1s ease-out forwards;
+}
+.discoverbtn4:not(:hover)::before{
+    animation: enddiscovertext 1s ease-in forwards;
+}
+
+@keyframes startdiscovertext{
+    0%{
+        color: white;
+    }
+    100%{
+        color: black;
+    }
+}
+@keyframes enddiscovertext{
+    0%{
+        color: black;
+    }
+    100%{
+        color: white;
+    }
+}
+
+.discoverspan1, .discoverspan2, .discoverspan3, .discoverspan4
+{
+    position: absolute;
+    border-radius: 50%;
+    background-color: red;
+    width: 0.1rem;
+    height: 0.1rem;
+    transform-origin: center;
+}
+
+@keyframes startdiscoverspan {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(300);
+    }
+}
+
+@keyframes enddiscoverspan {
+    0%{
+        transform: scale(300);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 550px){
+    .discovercard{
+        width: 90%;
+        margin: 1rem 0 1rem 0;
+    }
+    .discoverbtn{
+        padding: 1.5rem 3rem 1.5rem 3rem;
+    }
+}
+
+/*Second Mission*/
+
+.discovercenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mission2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+.mission2 img{
+    width: 70%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 1439px){
+    .mission2{
+        margin: 55vh 0 2rem 0;
+    }
+}
+
+@media (min-width: 716px) and (max-width: 1000px){
+    .mission2{
+        margin: 55vh 0 2rem 0;
+        height: 60vh;
+    }
+}
+
+@media (max-width: 716px){
+    .mission2{
+        margin: 170vh 0 2rem 0;
+        height: 40vh;
+    }
+    .mission2 img{
+        width: 85%;
+    }
+}
+
+.toppicktitle{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Londrina Sketch", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toppickdivmain{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toppickdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 70%;
+}
+
+.toppickimgdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.toppickimgdiv img{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 1.5rem;
+    object-fit: cover;
+}
+
+@media (max-width: 550px){
+    .toppickimgdiv{
+        flex-direction: row;
+        width: 100%;
+        align-items: none;
+        justify-content: none;
+    }
+    .toppickimgdiv img{
+        left: 0;
+    }
+    .toppickdiv{
+        width: 70%;
+    }
+    .toppickimgdiv p{
+        margin: 0 auto 0 0;
+    }
+}
+
+.bottomshopnowdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.bottomshopnow{
+    position: absolute;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width:max-content;
+    height: max-content;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.bottomshopnowdiv p:nth-child(2){
+    width:max-content;
+    height: max-content;
+    position:relative;
+    color: black;
+}
+
+.carticon{
+    fill:black;
+}
+
+.carticonsvg{
+    transform: translateX(-2rem);
+}
+
+.bottomshopnow:hover .carticonsvg{
+    animation: startbottomshopcart 0.3s ease-out forwards;
+}
+
+.bottomshopnow:hover ~ p:nth-child(2){
+    animation: startbottomshopword 0.3s ease-out forwards;
+}
+
+.bottomshopnow:not(:hover) .carticonsvg{
+    animation: endbottomshopcart 0.3s ease-in forwards;
+}
+
+.bottomshopnow:not(:hover) ~ p:nth-child(2){
+    animation: endbottomshopword 0.3s ease-in forwards;
+}
+
+@keyframes startbottomshopcart{
+    0%{
+        transform: translateX(-2rem);
+    }
+    100%{
+        transform: translateX(-0.1rem);
+    }
+}
+
+@keyframes startbottomshopword{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(0.7rem);
+    }
+}
+
+@keyframes endbottomshopcart{
+    0%{
+        transform: translateX(-0.1rem);
+    }
+    100%{
+        transform: translateX(-2rem);
+    }
+}
+
+@keyframes endbottomshopword{
+    0%{
+        transform: translateX(0.7rem);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/*Achievement*/
+
+.achievement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 99, 99);
+    padding: 2rem 0 2rem 0;
+    margin: 5rem 0 0 0;
+}
+
+.achievement p{
+    font-family: "Londrina Sketch", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.achievementimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.achievementimg img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    margin: 1rem;
+    object-fit: cover;
+}
+
+@media (min-width: 550px) and (max-width: 1000px){
+    .achievementimg img{
+        height: 70px;
+        width: 70px;
+        margin: 0.75rem;
+    }
+    .achievement p{
+        font-size: 1.5rem;
+    }
+    .achievement{
+        margin: 3.5rem 0 0 0;
+        padding: 1.5rem 0 1.5rem 0;
+    }
+}
+
+@media (max-width: 550px){
+    .achievementimg img{
+        height: 45px;
+        width: 45px;
+        margin: 0.6rem;
+    }
+    .achievement p{
+        font-size: 1.2rem;
+    }
+    .achievement{
+        margin: 3.5rem 0 0 0;
+        padding: 1rem 0 1rem 0;
+    }
+}
+
+/*Memebership*/
+
+.membership{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+
+.membershipword{
+    font-size: 2rem;
+    color:white;
+}
+
+.membershipword:nth-child(1){
+    margin: 2rem 0 0 0;
+}
+
+.membershipword:nth-child(2){
+    margin: 0 0 2rem 0;
+}
+
+.membershipbtn{
+    font-size: 1rem;
+    width:max-content;
+    height:max-content;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: red;
+    margin: 0 0 2rem 0;
+    color: white;
+}
+
+/*Exclusive*/
+
+.exclusivemain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    color: white;
+}
+
+.exclusive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70vw;
+    margin: 2rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
+    border-radius: 1rem;
+    background-color: red;
+}
+
+.exclusive2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.exclusive3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+    width: 20%;
+    margin: 0 1rem 0 1rem;
+}
+
+.exclusive3 div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.exclusive3 p{
+    width:max-content;
+    height: max-content;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}
+
+.exclusive3 div:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.exclusive3 svg{
+    transform: scale(3);
+}
+
+.exclusive > div > p:nth-child(1){
+    font-size: 2rem;
+}
+
+@media (max-width: 550px){
+    .exclusive{
+        width: 75%;
+    }
+    .exclusive3{
+        margin: 0 2rem 0 2rem;
+    }
+    .exclusive3 svg{
+        transform: scale(2);
+    }
+    .exclusive3 p{
+        font-size: 1rem;
+    }
+    .exclusive > div > p:nth-child(1){
+        font-size: 1.5rem;
+    }
+}
+
+/*Payment Options*/
+
+.paymentmain{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paymentoption{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.paymentoption img{
+    width: 120px;
+    height: 120px;
+    border-radius: 1rem;
+    margin: 2rem;
+}
+
+@media (max-width: 1000px){
+    .paymentoption img{
+        width: 100px;
+        height: 100px;
+        margin: 0.2rem;
+    }
+}

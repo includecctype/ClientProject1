@@ -1,0 +1,5 @@
+1. hover at nav bar create shiny effect
+2. custom scroll bar with ever changing draggable button
+3. Fluid svg detach and attach in slide show
+4. view products button with expanding span
+5. scrolling down makes the orange gradient to slowly takes over
