@@ -175,6 +175,10 @@ arrows.addEventListener("mouseover", function(){
     arrows.style.opacity = "0.7"
 })
 
+arrows.addEventListener("mouseleave", function(){
+    arrows.style.opacity = "0"
+})
+
 // Discover More
 
 const discoverbtn1 = document.querySelector(".discoverbtn1")
