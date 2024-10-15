@@ -676,7 +676,7 @@ body{
     border-radius: 0.5rem;
 }
 
-@media (max-width: 1439px){
+@media (max-width: 1445px){
     .mission2{
         margin: 55vh 0 2rem 0;
     }
