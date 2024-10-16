@@ -1,12 +1,5 @@
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 
-// No rotate
-
-if (screen.orientation) {
-    screen.orientation.lock('portrait').catch(function(error) {
-        console.log('Orientation lock failed: ', error);
-    });
-}
 
 // Scroll Smooth main body
 
@@ -190,34 +183,34 @@ gsap.to(".mobilenavbar", {
     }
 })
 
-gsap.set(laptopnavbar, {
+gsap.to(".laptopnavbar", {
     zIndex: 3
 })
 
-gsap.set(mobilenavbar, {
+gsap.to(".mobilenavbar", {
     zIndex: 3
 })
 
 laptopnavbar.addEventListener("mouseover", function(){
-    gsap.set(laptopnavbar, {
+    gsap.to(laptopnavbar, {
         zIndex: 10
     })
 })
 
 laptopnavbar.addEventListener("mouseleave", function(){
-    gsap.set(laptopnavbar, {
+    gsap.to(laptopnavbar, {
         zIndex: 3
     })
 })
 
 mobilenavbar.addEventListener("mouseover", function(){
-    gsap.set(mobilenavbar, {
+    gsap.to(mobilenavbar, {
         zIndex: 10
     })
 })
 
 mobilenavbar.addEventListener("mouseleave", function(){
-    gsap.set(mobilenavbar, {
+    gsap.to(mobilenavbar, {
         zIndex: 3
     })
 })
@@ -351,7 +344,6 @@ leftarrow.addEventListener("click", function(){
 const togglearrow = document.querySelector(".togglearrow");
 const arrows = document.querySelector(".arrows");
 
-// Initial opacity set to 0
 gsap.set(arrows, {
     position: "absolute",
     display: "flex",
@@ -596,6 +588,7 @@ for(let i = 0; i < 4; i++){
 // Top Pick
 
 const bottomshopnow = document.querySelector(".bottomshopnow")
+const bottomshopnow2 = document.querySelector(".bottomshopnowdiv p:nth-child(2)")
 const bottomshopnow3 = document.querySelector(".bottomshopnowdiv p:nth-child(3)")
 
 bottomshopnow3.addEventListener("mouseover", function(){
