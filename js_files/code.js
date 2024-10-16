@@ -10,6 +10,10 @@ if (screen.orientation) {
 
 // Scroll Smooth main body
 
+gsap.set(".mainbody", {
+    zIndex: 0
+})
+
 ScrollSmoother.create({
     smooth: 1.5,
     effects: true,
@@ -299,14 +303,41 @@ leftarrow.addEventListener("click", function(){
 
 })
 
-const togglearrow = document.querySelector(".togglearrow")
+const togglearrow = document.querySelector(".togglearrow");
+const arrows = document.querySelector(".arrows");
 
-togglearrow.addEventListener("mouseover", function(){
-    gsap.to(".arrows", {
-        opacity: 0.7,
-        duration: 0.5,
-    })
+// Initial opacity set to 0
+gsap.set(arrows, {
+    position: "absolute",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    zIndex: 0,
+    opacity: 1, 
+});
+
+gsap.set(togglearrow, {
+    position:"absolute",
+    width: "100%",
+    height: "100%",
+    zIndex: 4
 })
+
+togglearrow.addEventListener("mouseover", function() {
+    gsap.to(arrows, { opacity: 0.7, duration: 0.5, zIndex: 4 });
+});
+
+togglearrow.addEventListener("mouseleave", function() {
+    gsap.to(arrows, { opacity: 0, duration: 0.5,  zIndex: 0 });
+});
+
+arrows.addEventListener("mouseover", function() {
+    gsap.to(arrows, { opacity: 0.7, duration: 0.5,  zIndex: 4  });
+});
+
+arrows.addEventListener("mouseleave", function() {
+    gsap.to(arrows, { opacity: 0, duration: 0.5,  zIndex: 0 });
+});
 
 
 /*
