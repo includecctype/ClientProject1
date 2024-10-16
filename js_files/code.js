@@ -3,13 +3,8 @@ gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 
 // Scroll Smooth main body
 
-gsap.set(".mainbody", {
-    zIndex: 0
-})
-
 ScrollSmoother.create({
     smooth: 1.5,
-    effects: true,
     content: ".mainbody"
 });
 
