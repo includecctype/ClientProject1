@@ -22,6 +22,7 @@ ScrollSmoother.create({
 
 // Top Bar
 
+const topbar = document.querySelector(".TopBar")
 const guest = document.querySelector(".TopBar p:nth-child(3)")
 
 guest.addEventListener("click", function(){
@@ -102,6 +103,19 @@ media550px.add("(max-width: 550px)", function(){
     })
 })
 
+topbar.addEventListener("mouseover", function(){
+    gsap.set(topbar, {
+        zIndex: 10
+    })
+})
+
+topbar.addEventListener("mouseleave", function(){
+    gsap.set(topbar, {
+        zIndex: 3
+    })
+})
+
+
 // Navigation Bars
 
 const openmenu = document.querySelector(".openmenu")
@@ -110,7 +124,7 @@ const closemenu = document.querySelector(".closemenu")
 const wordlogodiv = document.querySelector(".wordlogodiv")
 const mobilenavfirst = document.querySelector(".mobilenavbar p:first-child")
 const body = document.querySelector("body")
-const topbar = document.querySelector(".TopBar")
+const laptopnavbar = document.querySelector(".laptopnavbar")
 const mobilenavbar = document.querySelector(".mobilenavbar")
 
 const mediamax1000px = window.matchMedia('(min-width: 550px) and (max-width: 1000px)')
@@ -176,11 +190,42 @@ gsap.to(".mobilenavbar", {
     }
 })
 
+gsap.set(laptopnavbar, {
+    zIndex: 3
+})
+
+gsap.set(mobilenavbar, {
+    zIndex: 3
+})
+
+laptopnavbar.addEventListener("mouseover", function(){
+    gsap.set(laptopnavbar, {
+        zIndex: 10
+    })
+})
+
+laptopnavbar.addEventListener("mouseleave", function(){
+    gsap.set(laptopnavbar, {
+        zIndex: 3
+    })
+})
+
+mobilenavbar.addEventListener("mouseover", function(){
+    gsap.set(mobilenavbar, {
+        zIndex: 10
+    })
+})
+
+mobilenavbar.addEventListener("mouseleave", function(){
+    gsap.set(mobilenavbar, {
+        zIndex: 3
+    })
+})
+
 // Mission
 
 const missiontopspacing1 = document.querySelector(".missiontopspacing1")
 const missiontopspacing2 = document.querySelector(".missiontopspacing2")
-const laptopnavbar = document.querySelector(".laptopnavbar")
 
 const height1 = getComputedStyle(topbar).height
 const height2 = getComputedStyle(laptopnavbar).height
@@ -313,7 +358,7 @@ gsap.set(arrows, {
     alignItems: "center",
     justifyContent: "center",
     zIndex: 0,
-    opacity: 1, 
+    opacity: 0, 
 });
 
 gsap.set(togglearrow, {
@@ -392,9 +437,12 @@ discoverbtn1.addEventListener("mouseover", function(cursor){
     
     discoverspan1.style.top = `${y1 - y2}px`
     discoverspan1.style.left = `${x1 - x2}px`
-    
-    discoverspan1.style.animation = "startdiscoverspan 1s ease-out forwards"
 
+    gsap.to(discoverspan1, {
+        duration: 1,
+        scale: 300
+    })
+    
 })
 
 discoverbtn1.addEventListener("mouseleave", function(cursor){
@@ -408,8 +456,10 @@ discoverbtn1.addEventListener("mouseleave", function(cursor){
     discoverspan1.style.top = `${y1 - y2}px`
     discoverspan1.style.left = `${x1 - x2}px`
     
-    discoverspan1.style.animation = "enddiscoverspan 1s ease-in forwards"
-
+    gsap.to(discoverspan1, {
+        duration: 1,
+        scale: 1
+    })
 })
 
 discoverbtn2.addEventListener("mouseover", function(cursor){
@@ -423,8 +473,10 @@ discoverbtn2.addEventListener("mouseover", function(cursor){
     discoverspan2.style.top = `${y1 - y2}px`
     discoverspan2.style.left = `${x1 - x2}px`
     
-    discoverspan2.style.animation = "startdiscoverspan 1s ease-out forwards"
-
+    gsap.to(discoverspan2, {
+        duration: 1,
+        scale: 300
+    })
 })
 
 discoverbtn2.addEventListener("mouseleave", function(cursor){
@@ -438,8 +490,10 @@ discoverbtn2.addEventListener("mouseleave", function(cursor){
     discoverspan2.style.top = `${y1 - y2}px`
     discoverspan2.style.left = `${x1 - x2}px`
     
-    discoverspan2.style.animation = "enddiscoverspan 1s ease-in forwards"
-
+    gsap.to(discoverspan2, {
+        duration: 1,
+        scale: 1
+    })
 })
 
 discoverbtn3.addEventListener("mouseover", function(cursor){
@@ -453,8 +507,10 @@ discoverbtn3.addEventListener("mouseover", function(cursor){
     discoverspan3.style.top = `${y1 - y2}px`
     discoverspan3.style.left = `${x1 - x2}px`
     
-    discoverspan3.style.animation = "startdiscoverspan 1s ease-out forwards"
-
+    gsap.to(discoverspan3, {
+        duration: 1,
+        scale: 300
+    })
 })
 
 discoverbtn3.addEventListener("mouseleave", function(cursor){
@@ -468,8 +524,10 @@ discoverbtn3.addEventListener("mouseleave", function(cursor){
     discoverspan3.style.top = `${y1 - y2}px`
     discoverspan3.style.left = `${x1 - x2}px`
     
-    discoverspan3.style.animation = "enddiscoverspan 1s ease-in forwards"
-
+    gsap.to(discoverspan3, {
+        duration: 1,
+        scale: 1
+    })
 })
 
 discoverbtn4.addEventListener("mouseover", function(cursor){
@@ -483,8 +541,10 @@ discoverbtn4.addEventListener("mouseover", function(cursor){
     discoverspan4.style.top = `${y1 - y2}px`
     discoverspan4.style.left = `${x1 - x2}px`
     
-    discoverspan4.style.animation = "startdiscoverspan 1s ease-out forwards"
-
+    gsap.to(discoverspan4, {
+        duration: 1,
+        scale: 300
+    })
 })
 
 discoverbtn4.addEventListener("mouseleave", function(cursor){
@@ -498,7 +558,66 @@ discoverbtn4.addEventListener("mouseleave", function(cursor){
     discoverspan4.style.top = `${y1 - y2}px`
     discoverspan4.style.left = `${x1 - x2}px`
     
-    discoverspan4.style.animation = "enddiscoverspan 1s ease-in forwards"
-
+    gsap.to(discoverspan4, {
+        duration: 1,
+        scale: 1
+    })
 })
 
+const discoverbtn = document.getElementsByClassName("discoverbtn")
+const discoverindex = document.getElementsByClassName("discoverindex")
+
+for(let i = 0; i < 4; i++){
+    discoverindex[i].addEventListener("mouseover", function(){
+        gsap.set(discoverbtn[i], {
+            zIndex: 6
+        })
+    })
+    
+    discoverbtn[i].addEventListener("mouseover", function(){
+        gsap.set(discoverbtn[i], {
+            zIndex: 6
+        })
+    })
+
+    discoverindex[i].addEventListener("mouseleave", function(){
+        gsap.set(discoverbtn[i], {
+            zIndex: 0
+        })
+    })
+    
+    discoverbtn[i].addEventListener("mouseleave", function(){
+        gsap.set(discoverbtn[i], {
+            zIndex: 0
+        })
+    })
+}
+
+// Top Pick
+
+const bottomshopnow = document.querySelector(".bottomshopnow")
+const bottomshopnow3 = document.querySelector(".bottomshopnowdiv p:nth-child(3)")
+
+bottomshopnow3.addEventListener("mouseover", function(){
+    gsap.set(bottomshopnow, {
+        zIndex: 5
+    })
+})
+
+bottomshopnow3.addEventListener("mouseleave", function(){
+    gsap.set(bottomshopnow, {
+        zIndex: 0
+    })
+})
+
+bottomshopnow.addEventListener("mouseover", function(){
+    gsap.set(bottomshopnow, {
+        zIndex: 5
+    })
+})
+
+bottomshopnow.addEventListener("mouseleave", function(){
+    gsap.set(bottomshopnow, {
+        zIndex: 0
+    })
+})

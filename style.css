@@ -77,7 +77,6 @@ body{
     align-items: center;
     justify-content: flex-end;
     background: linear-gradient(90deg, rgba(255, 68, 0, 1) 10%, red);
-    z-index: 3;
     border-radius: 0 0 1rem 1rem;
 
 }
@@ -118,7 +117,6 @@ body{
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, rgba(255, 68, 0, 1) 10%, red);
-    z-index: 10;
 }
 
 .mobilenavbar p{
@@ -554,6 +552,24 @@ body{
     z-index: 2;
 }
 
+.discoverindexdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discoverindex{
+    position:absolute;
+    color: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    width:max-content;
+    height: max-content;
+    padding: 1rem 2rem 1rem 2rem;
+    margin: 1rem;
+    z-index: 5;
+}
+
 .discoverbtn1:hover::before{
     animation: startdiscovertext 1s ease-out forwards;
 }
@@ -607,24 +623,6 @@ body{
     width: 0.1rem;
     height: 0.1rem;
     transform-origin: center;
-}
-
-@keyframes startdiscoverspan {
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(300);
-    }
-}
-
-@keyframes enddiscoverspan {
-    0%{
-        transform: scale(300);
-    }
-    100%{
-        transform: scale(1);
-    }
 }
 
 @media (max-width: 550px){
@@ -764,7 +762,7 @@ body{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    z-index: 3;
+    z-index: 0;
 }
 
 .bottomshopnowdiv p:nth-child(2){
@@ -772,6 +770,18 @@ body{
     height: max-content;
     position:relative;
     color: black;
+}
+
+.bottomshopnowdiv p:nth-child(3){
+    position: absolute;
+    padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+    width:max-content;
+    height: max-content;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
 }
 
 .carticon{
