@@ -32,11 +32,13 @@ mediafullpx.add("(min-width: 1000px)", function(){
             onLeave: function(){
                 gsap.to(".laptopnavbar", {
                     top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                    immediateRender: false
                 })
             },
             onEnterBack: function(){
                 gsap.to(".laptopnavbar", {
                     top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                    immediateRender: false
                 })
             }
         }
@@ -56,11 +58,13 @@ media1000px.add("(min-width: 550px) and (max-width: 1000px)", function(){
             onLeave: function(){
                 gsap.to(".mobilenavbar", {
                     top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                    immediateRender: false
                 })
             },
             onEnterBack: function(){
                 gsap.to(".mobilenavbar", {
                     top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                    immediateRender: false
                 })
             }
         }
@@ -80,11 +84,13 @@ media550px.add("(max-width: 550px)", function(){
             onLeave: function(){
                 gsap.to(".mobilenavbar", {
                     top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                    immediateRender: false
                 })
             },
             onEnterBack: function(){
                 gsap.to(".mobilenavbar", {
                     top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                    immediateRender: false
                 })
             }
         }
