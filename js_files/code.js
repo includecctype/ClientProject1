@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
 ScrollSmoother.create({
     smooth: 1.5,
     content: ".mainbody"
-});
+})
 
 // Top Bar
 
