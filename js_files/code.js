@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger)
+
 // No rotate
 
 if (screen.orientation) {
@@ -6,12 +8,94 @@ if (screen.orientation) {
     });
 }
 
+// Scroll Smooth main body
+
+ScrollSmoother.create({
+    smooth: 1.5,
+    effects: true,
+    content: ".mainbody"
+});
+
 // Top Bar
 
 const guest = document.querySelector(".TopBar p:nth-child(3)")
 
 guest.addEventListener("click", function(){
     window.location.href = "https://system.trendyqmarketing.com/"
+})
+
+const TopBarheight = gsap.getProperty(".TopBar", "height")
+const TopBarbottom = gsap.getProperty(".TopBar", "bottom")
+const mediafullpx = gsap.matchMedia()
+
+mediafullpx.add("(min-width: 1000px)", function(){
+    gsap.to(".TopBar", {
+        scrollTrigger: {
+            trigger: ".TopBar",
+            pin: true,
+            start: "top top",
+            end : "+=1700",
+            toggleActions: "play none none none",
+            onLeave: function(){
+                gsap.to(".laptopnavbar", {
+                    top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                })
+            },
+            onEnterBack: function(){
+                gsap.to(".laptopnavbar", {
+                    top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                })
+            }
+        }
+    })
+})
+
+const media1000px = gsap.matchMedia()
+
+media1000px.add("(min-width: 550px) and (max-width: 1000px)", function(){
+    gsap.to(".TopBar", {
+        scrollTrigger: {
+            trigger: ".TopBar",
+            pin: true,
+            start: "top top",
+            end : "+=1500",
+            toggleActions: "play none none none",
+            onLeave: function(){
+                gsap.to(".mobilenavbar", {
+                    top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                })
+            },
+            onEnterBack: function(){
+                gsap.to(".mobilenavbar", {
+                    top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                })
+            }
+        }
+    })
+})
+
+const media550px = gsap.matchMedia()
+
+media550px.add("(max-width: 550px)", function(){
+    gsap.to(".TopBar", {
+        scrollTrigger: {
+            trigger: ".TopBar",
+            pin: true,
+            start: "top top",
+            end : "+=2100",
+            toggleActions: "play none none none",
+            onLeave: function(){
+                gsap.to(".mobilenavbar", {
+                    top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                })
+            },
+            onEnterBack: function(){
+                gsap.to(".mobilenavbar", {
+                    top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                })
+            }
+        }
+    })
 })
 
 // Navigation Bars
@@ -25,9 +109,9 @@ const body = document.querySelector("body")
 const topbar = document.querySelector(".TopBar")
 const mobilenavbar = document.querySelector(".mobilenavbar")
 
-const mediamax800px = window.matchMedia('(min-width: 550px) and (max-width: 1000px)')
+const mediamax1000px = window.matchMedia('(min-width: 550px) and (max-width: 1000px)')
 
-if (mediamax800px.matches){
+if (mediamax1000px.matches){
     openmenu.addEventListener("click", function(){
         openmenu.style.visibility = "hidden"
         dropdownnavbar.style.display = "flex"
@@ -42,9 +126,9 @@ if (mediamax800px.matches){
     })
 }
 
-const mediamax400px = window.matchMedia('(max-width: 550px)')
+const mediamax550px = window.matchMedia('(max-width: 550px)')
 
-if(mediamax400px.matches){
+if(mediamax550px.matches){
     openmenu.addEventListener("click", function(){
         openmenu.style.visibility = "hidden"
         dropdownnavbar.style.display = "flex"
@@ -57,6 +141,55 @@ if(mediamax400px.matches){
         body.style.overflowY = "auto"
         body.style.overflowX = "hidden"
     })
+}
+
+
+gsap.set(".laptopnavbar", {
+    top: gsap.getProperty(".TopBar", "height")
+})
+
+gsap.to(".laptopnavbar", {
+    scrollTrigger: {
+        trigger: ".laptopnavbar",
+        pin: true,
+        start: `top top+=${TopBarheight}`,
+        end: "+=10000",
+        toggleActions: "play none none none",
+    }
+})
+
+gsap.set(".mobilenavbar", {
+    top: gsap.getProperty(".TopBar", "height")
+})
+
+gsap.to(".mobilenavbar", {
+    scrollTrigger: {
+        trigger: ".mobilenavbar",
+        pin: true,
+        start: `top top+=${TopBarheight}`,
+        end: "+=10000",
+        toggleActions: "play none none none",
+    }
+})
+
+// Mission
+
+const missiontopspacing1 = document.querySelector(".missiontopspacing1")
+const missiontopspacing2 = document.querySelector(".missiontopspacing2")
+const laptopnavbar = document.querySelector(".laptopnavbar")
+
+const height1 = getComputedStyle(topbar).height
+const height2 = getComputedStyle(laptopnavbar).height
+
+missiontopspacing1.style.height = `${height1}`
+missiontopspacing2.style.height = `${height2}`
+
+if(mediamax1000px.matches){
+    missiontopspacing2.style.height = `${mobilenavbar.style.height}`
+}
+
+if(mediamax550px.matches){
+    missiontopspacing2.style.height = `${mobilenavbar.style.height}`
 }
 
 // Slide Show
@@ -167,6 +300,17 @@ leftarrow.addEventListener("click", function(){
 })
 
 const togglearrow = document.querySelector(".togglearrow")
+
+togglearrow.addEventListener("mouseover", function(){
+    gsap.to(".arrows", {
+        opacity: 0.7,
+        duration: 0.5,
+    })
+})
+
+
+/*
+const togglearrow = document.querySelector(".togglearrow")
 const arrows = document.querySelector(".arrows")
 
 arrows.style.transition = "opacity 0.5s"
@@ -186,6 +330,8 @@ arrows.addEventListener("mouseover", function(){
 arrows.addEventListener("mouseleave", function(){
     arrows.style.opacity = "0"
 })
+*/
+
 
 // Discover More
 

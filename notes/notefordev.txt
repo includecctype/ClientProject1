@@ -6,3 +6,7 @@ Reference for policy: https://lifenutrics.com/refund-policy/
 
 Theme is red , light red, white and black
 
+the website must contain 
+1) terms and conditions
+2) privacy policies
+3) refund policies
