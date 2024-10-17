@@ -23,6 +23,7 @@ const mediafullpx = gsap.matchMedia()
 
 mediafullpx.add("(min-width: 1000px)", function(){
     gsap.to(".TopBar", {
+        immediateRender: false,
         scrollTrigger: {
             trigger: ".TopBar",
             pin: true,
@@ -49,6 +50,7 @@ const media1000px = gsap.matchMedia()
 
 media1000px.add("(min-width: 550px) and (max-width: 1000px)", function(){
     gsap.to(".TopBar", {
+        immediateRender: false,
         scrollTrigger: {
             trigger: ".TopBar",
             pin: true,
@@ -75,6 +77,7 @@ const media550px = gsap.matchMedia()
 
 media550px.add("(max-width: 550px)", function(){
     gsap.to(".TopBar", {
+        immediateRender: false,
         scrollTrigger: {
             trigger: ".TopBar",
             pin: true,
@@ -161,6 +164,7 @@ gsap.set(".laptopnavbar", {
 })
 
 gsap.to(".laptopnavbar", {
+    immediateRender: false,
     scrollTrigger: {
         trigger: ".laptopnavbar",
         pin: true,
@@ -175,6 +179,7 @@ gsap.set(".mobilenavbar", {
 })
 
 gsap.to(".mobilenavbar", {
+    immediateRender: false,
     scrollTrigger: {
         trigger: ".mobilenavbar",
         pin: true,
