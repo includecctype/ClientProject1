@@ -165,7 +165,7 @@ gsap.to(".laptopnavbar", {
         trigger: ".laptopnavbar",
         pin: true,
         start: `top top+=${TopBarheight}`,
-        end: "+=10000",
+        end: "+=4500",
         toggleActions: "play none none none",
     }
 })
@@ -179,7 +179,7 @@ gsap.to(".mobilenavbar", {
         trigger: ".mobilenavbar",
         pin: true,
         start: `top top+=${TopBarheight}`,
-        end: "+=10000",
+        end: "+=5100",
         toggleActions: "play none none none",
     }
 })
