@@ -30,6 +30,7 @@ mediafullpx.add("(min-width: 1000px)", function(){
             start: "top top",
             end : "+=1700",
             toggleActions: "play none none none",
+            pinSpacing: false,
             onLeave: function(){
                 gsap.to(".laptopnavbar", {
                     top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
@@ -57,6 +58,7 @@ media1000px.add("(min-width: 550px) and (max-width: 1000px)", function(){
             start: "top top",
             end : "+=1500",
             toggleActions: "play none none none",
+            pinSpacing: false,
             onLeave: function(){
                 gsap.to(".mobilenavbar", {
                     top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
@@ -84,6 +86,7 @@ media550px.add("(max-width: 550px)", function(){
             start: "top top",
             end : "+=2100",
             toggleActions: "play none none none",
+            pinSpacing: false,
             onLeave: function(){
                 gsap.to(".mobilenavbar", {
                     top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
@@ -171,6 +174,7 @@ gsap.to(".laptopnavbar", {
         start: `top top+=${TopBarheight}`,
         end: "+=4500",
         toggleActions: "play none none none",
+        pinSpacing: false
     }
 })
 
@@ -186,6 +190,7 @@ gsap.to(".mobilenavbar", {
         start: `top top+=${TopBarheight}`,
         end: "+=5600",
         toggleActions: "play none none none",
+        pinSpacing: false
     }
 })
 
