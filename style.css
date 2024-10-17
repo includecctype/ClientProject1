@@ -19,7 +19,6 @@ body{
 /* Top Bar */
 
 .TopBar{
-    position: absolute;
     width: 100%;
     background-color: white;
     display: flex;
