@@ -21,6 +21,9 @@ const TopBarheight = gsap.getProperty(".TopBar", "height")
 const TopBarbottom = gsap.getProperty(".TopBar", "bottom")
 const mediafullpx = gsap.matchMedia()
 
+let laptopnavbartop = TopBarbottom - (TopBarbottom - TopBarheight)
+let laptopnavbartop2 = (TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight
+
 mediafullpx.add("(min-width: 1000px)", function(){
     gsap.to(".TopBar", {
         immediateRender: false,
@@ -33,13 +36,13 @@ mediafullpx.add("(min-width: 1000px)", function(){
             pinSpacing: false,
             onLeave: function(){
                 gsap.to(".laptopnavbar", {
-                    top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                    top: `${-(laptopnavbartop)}`,
                     immediateRender: false
                 })
             },
             onEnterBack: function(){
                 gsap.to(".laptopnavbar", {
-                    top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                    top: `${laptopnavbartop2}`,
                     immediateRender: false
                 })
             }
@@ -61,13 +64,13 @@ media1000px.add("(min-width: 550px) and (max-width: 1000px)", function(){
             pinSpacing: false,
             onLeave: function(){
                 gsap.to(".mobilenavbar", {
-                    top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                    top: `${-(laptopnavbartop)}`,
                     immediateRender: false
                 })
             },
             onEnterBack: function(){
                 gsap.to(".mobilenavbar", {
-                    top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                    top: `${laptopnavbartop2}`,
                     immediateRender: false
                 })
             }
@@ -89,13 +92,13 @@ media550px.add("(max-width: 550px)", function(){
             pinSpacing: false,
             onLeave: function(){
                 gsap.to(".mobilenavbar", {
-                    top: `${-(TopBarbottom - (TopBarbottom - TopBarheight))}`,
+                    top: `${-(laptopnavbartop)}`,
                     immediateRender: false
                 })
             },
             onEnterBack: function(){
                 gsap.to(".mobilenavbar", {
-                    top: `${(TopBarbottom - (TopBarbottom - TopBarheight))-TopBarheight}`,
+                    top: `${laptopnavbartop2}`,
                     immediateRender: false
                 })
             }
