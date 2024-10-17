@@ -179,7 +179,7 @@ gsap.to(".mobilenavbar", {
         trigger: ".mobilenavbar",
         pin: true,
         start: `top top+=${TopBarheight}`,
-        end: "+=5100",
+        end: "+=5600",
         toggleActions: "play none none none",
     }
 })
