@@ -398,7 +398,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: red;
+        background-color: rgba(0, 0, 0, 0.4);
         border-radius: 1rem;
         width: 90%
     }
@@ -408,7 +408,6 @@ body{
         justify-content: flex-start;
         flex-direction: column;
         width: 100%;
-        background-color: red;
         margin: 1rem;
     }
     .mobilerefundpolicy > .mobilerefundpolicymargin > div > p{
