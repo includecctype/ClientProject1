@@ -344,6 +344,10 @@ body{
     display:none;
 }
 
+.mobilefooter2{
+    display: none;
+}
+
 /* Mobile Version */
 
 @media (max-width: 700px){
@@ -431,5 +435,25 @@ body{
     }
     .mobilefooter1 > div:nth-child(3){
         margin: 1rem;
+    }
+    .mobilefooter2{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: row;
+        background-color: red;
+    }
+    .mobilefooter2 > div{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .mobilefooter2 > div > p{
+        font-size: 0.6rem;
+        color: white;
+    }
+    .mobilefooter2 > div:nth-child(1){
+        margin-right: auto;
     }
 }
