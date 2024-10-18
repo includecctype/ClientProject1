@@ -1219,3 +1219,22 @@ body{
         height: 60px;
     }
 }
+
+.termsandcondition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.termsandcondition a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+@media(max-width: 550px){
+    .termsandcondition a{
+        font-size: 0.7rem;
+    }
+}
