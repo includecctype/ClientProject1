@@ -474,3 +474,14 @@ body{
         margin-right: auto;
     }
 }
+
+.footer a{
+    color: white;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.mobilefooter2 a{
+    color: white;
+    text-decoration: none;
+}
