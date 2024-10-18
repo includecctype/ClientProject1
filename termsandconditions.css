@@ -334,5 +334,12 @@ body{
 @media (max-width: 550px){
     .termscenter > div:nth-child(2) > div:nth-child(1) > div{
         display: none;
+        width: 0;
+        height: 0;
+    }
+    .termscenter > div:nth-child(3){
+        transform: scale(0.6);
+        width: 160vw;
+        height: 220px;
     }
 }
